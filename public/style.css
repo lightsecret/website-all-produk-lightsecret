@@ -14,6 +14,49 @@ body{
 html{
    scroll-behavior: smooth ;
 }
+
+    .text {
+      font-size: 4rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      display: flex;
+      gap: 2px;
+    }
+
+    .text span {
+      display: inline-block;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(270deg, 
+        red, orange, yellow, green, cyan, blue, violet, red);
+      background-size: 800% 800%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: bounce 1s infinite alternate ease-in-out,
+                 gradientMove 5s infinite linear;
+                 font-size: .8rem;
+    }
+
+    .text span:nth-child(odd) {
+      animation-delay: 0s, 0s;
+    }
+
+    .text span:nth-child(even) {
+      animation-delay: 0.2s, 0.2s;
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 100% 50%;
+      }
+    }
 a{
   text-decoration: none;
 }
@@ -377,7 +420,7 @@ margin-top: 10px;
     display: block;
     margin: 0 auto;
     position: relative;
-    top: -30px;
+    top: 50px;
     border-radius: 20px;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -470,6 +513,8 @@ margin-top: 10px;
     height: 356px;
     overflow-y: scroll;
     display: flex;
+    margin-top: 90px;
+    padding-top: 20px;
     flex-direction: column;
     scrollbar-width: auto;
 /* overflow-x: hidden; */

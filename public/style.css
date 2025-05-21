@@ -436,6 +436,7 @@ margin-top: 10px;
 .title-card{
   width: max-content;
     font-weight: bold;
+    font-size: 17.8px;
         background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet, red);
       background-size: 1000% 100%;
       -webkit-background-clip: text;

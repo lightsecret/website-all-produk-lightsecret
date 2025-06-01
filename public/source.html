@@ -1,4 +1,418 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>PAYMENT LIGHTSECRET</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: black;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+      padding: 0;
+    }#loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 99999;
+}
+
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear;
+  box-shadow: 0 0 12px #fff, 0 0 24px #fff;
+}
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 4px solid;
+  border-color: #fff transparent;
+  box-shadow: 0 0 12px #fff, 0 0 24px #fff;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader-text {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body><div id="loader-container">
+  <span class="loader"></span>
+  <div class="loader-text" id="loader-text">𝑳𝑶𝑨𝑫𝑰𝑵𝑮...</div>
+</div><div id="main-app" style="display:none">
+  <!-- Seluruh kode HTML website utama dimulai di sini -->
+  <!-- Salin isi dari kode 2 yang kamu punya -->
+    <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: url('https://img1.pixhost.to/images/5669/597279014_depayyy.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+      padding: 50px 20px;
+      position: relative;
+    }
+
+    canvas#particles, canvas#snow {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .shine {
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      width: 300%;
+      height: 300%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+      transform: rotate(45deg);
+      animation: shine 4s infinite linear;
+      z-index: 0;
+    }
+
+    @keyframes shine {
+      0% { transform: translate(-100%, -100%) rotate(45deg); }
+      100% { transform: translate(100%, 100%) rotate(45deg); }
+    }
+
+    .welcome-message {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      z-index: 9999;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: white;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .qr img {
+      width: 220px;
+      border-radius: 12px;
+      margin: 30px auto;
+      transition: transform 0.3s ease;
+      box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    }
+
+    .qr:hover img { transform: scale(1.08); }
+
+    .collapsible-container {
+      max-width: 500px;
+      margin: 30px auto;
+      background-color: rgba(30, 41, 59, 0.8);
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    .collapsible {
+      background: linear-gradient(45deg, white, black, white);
+      background-size: 200% 200%;
+      animation: gradientBtn 3s ease infinite;
+      color: white;
+      cursor: pointer;
+      padding: 14px;
+      width: 100%;
+      border: none;
+      font-size: 1.1em;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .content {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      color: white;
+      border-radius: 10px;
+      margin-top: 5px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      gap: 12px;
+    }
+
+    .btn-link {
+      padding: 14px 24px;
+      background: linear-gradient(45deg, white, black, white);
+      background-size: 200% 200%;
+      animation: gradientBtn 4s ease infinite;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-link:hover { transform: scale(1.08); }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes gradientBtn {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="shine"></div>
+
+<!-- Welcome Animation -->
+<div id="welcome-message" class="welcome-message">
+  <h1>𝚑𝚎𝚢𝚢, 𝚒'𝚒𝚖 𝚖𝚒𝚗𝚎𝚎</h1>
+  <p>𝚜𝚎𝚕𝚊𝚖𝚊𝚝 𝙳𝚊𝚝𝚊𝚗𝚐 𝙳𝚒 𝚆𝚎𝚋𝚜𝚒𝚝𝚎 𝚂𝚒𝚖𝚙𝚕𝚎 𝙿𝚊𝚢𝚖𝚎𝚗𝚝 𝙺𝚞</p>
+ <p>𝚊𝚔𝚞 𝚑𝚊𝚛𝚊𝚙 𝚔𝚊𝚖𝚞 𝚝𝚒𝚍𝚊𝚔 𝚜𝚊𝚕𝚊𝚑 𝚝𝚏 𝚘𝚔𝚎𝚢</p>
+  <button id="go-to-payment" class="btn-link">go to payment</button>
+</div>
+
+<audio id="clickSound" src="https://files.catbox.moe/0i11yd.mp3"></audio>
+
+<!-- Konten Utama -->
+<div id="main-content" style="display: none;">
+  <h1>Payment Methods</h1>
+  <p>𝙎𝙞𝙡𝙖𝙠𝙖𝙣 𝙋𝙞𝙡𝙞𝙝 𝙎𝙖𝙡𝙖𝙝 𝙎𝙖𝙩𝙪 𝙈𝙚𝙩𝙤𝙙𝙚 𝙋𝙚𝙢𝙗𝙖𝙮𝙖𝙧𝙖𝙣 𝘿𝙞 𝘽𝙖𝙬𝙖𝙝 𝙄𝙣𝙞</p>
+
+             <div class="qr" onclick="zoomQR()">
+    <img src="https://img1.pixhost.to/images/5670/597301272_kyami.jpg" />
+  </div>
+
+        <p class="subtitle">𝙎𝙘𝙖𝙣 𝙠𝙤𝙙𝙚 𝙌𝙍 𝙙𝙞 𝙖𝙩𝙖𝙨 𝙙𝙚𝙣𝙜𝙖𝙣 𝙖𝙥𝙡𝙞𝙠𝙖𝙨𝙞 𝙥𝙚𝙢𝙗𝙖𝙮𝙖𝙧𝙖𝙣 𝘼𝙣𝙙𝙖</p>
+
+         <div class="collapsible-container">
+    <button class="collapsible">▶ 𝑬-𝑾𝑨𝑳𝑳𝑬𝑻</button>
+    <div class="content">
+      <p>DANA:  081939245564</p>
+      <p>OVO: 085900017703</p>
+      <p>GOPAY: 085900017703</p>
+    </div>
+
+    <button class="collapsible">▶ 𝑻𝑹𝑨𝑵𝑺𝑭𝑬𝑹 𝑩𝑨𝑵𝑲</button>
+    <div class="content">
+      <p>BCA: tidak tersedia</p>
+      <p>SEA BANK: 901131996822</p>
+    </div>
+  </div>
+
+<div class="btn-group">
+  <a href="https://wa.me/6281939245564" class="btn-link" target="_blank">WhatsApp</a>
+  <a href="https://t.me/lightsecret" class="btn-link" target="_blank">Telegram</a>
+   <a href="https://www.youtube.com/@lightsecret" class="btn-link" target="_blank">YouTube</a>
+  <a href="https://whatsapp.com/channel/0029VbADDW2ISTkREJ5m4833" class="btn-link" target="_blank">Channel WhatsApp</a>
+  <a href="https://tiktok.com/@lightsecrethosting" class="btn-link">Tiktok</a>
+  <a href="https://whatsapp.com/channel/0029Vb9vfiZ96H4VScP6l10j" class="btn-link" target="_blank">Channel Testimoni</a>
+</div>
+
+</div>
+ <div class="overlay" id="qrOverlay" onclick="closeZoom()">
+       
+
+<canvas id="particles"></canvas>
+<canvas id="snow"></canvas>
+
 <script>
-<!-- code by https://www.html-code-generator.com -->
-document.write(unescape('%3C%21DOCTYPE%20html%3E%3Chtml%20lang%3D%22id%22%3E%0A%3Chead%3E%0A%20%20%3Cmeta%20charset%3D%22UTF-8%22%20/%3E%0A%20%20%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice-width%2C%20initial-scale%3D1.0%2C%20user-scalable%3Dno%22%20/%3E%0A%20%20%3Ctitle%3EPAYMENT%20LIGHTSECRET%3C/title%3E%0A%20%20%3Clink%20href%3D%22https%3A//fonts.googleapis.com/css2%3Ffamily%3DOutfit%3Awght@300%3B500%3B700%26display%3Dswap%22%20rel%3D%22stylesheet%22%3E%0A%20%20%3Cstyle%3E%0A%20%20%20%20*%20%7B%20margin%3A%200%3B%20padding%3A%200%3B%20box-sizing%3A%20border-box%3B%20%7D%0A%20%20%20%20body%20%7B%0A%20%20%20%20%20%20font-family%3A%20%27Outfit%27%2C%20sans-serif%3B%0A%20%20%20%20%20%20background%3A%20black%3B%0A%20%20%20%20%20%20color%3A%20white%3B%0A%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20overflow-x%3A%20hidden%3B%0A%20%20%20%20%20%20padding%3A%200%3B%0A%20%20%20%20%7D%23loader-container%20%7B%0A%20%20position%3A%20fixed%3B%0A%20%20top%3A%200%3B%0A%20%20left%3A%200%3B%0A%20%20width%3A%20100vw%3B%0A%20%20height%3A%20100vh%3B%0A%20%20background-color%3A%20%23000%3B%0A%20%20display%3A%20flex%3B%0A%20%20justify-content%3A%20center%3B%0A%20%20align-items%3A%20center%3B%0A%20%20flex-direction%3A%20column%3B%0A%20%20z-index%3A%2099999%3B%0A%7D%0A%0A.loader%20%7B%0A%20%20width%3A%2060px%3B%0A%20%20height%3A%2060px%3B%0A%20%20border%3A%204px%20solid%20%23fff%3B%0A%20%20border-radius%3A%2050%25%3B%0A%20%20display%3A%20inline-block%3B%0A%20%20position%3A%20relative%3B%0A%20%20box-sizing%3A%20border-box%3B%0A%20%20animation%3A%20rotation%202s%20linear%3B%0A%20%20box-shadow%3A%200%200%2012px%20%23fff%2C%200%200%2024px%20%23fff%3B%0A%7D%0A%0A.loader%3A%3Aafter%20%7B%0A%20%20content%3A%20%27%27%3B%0A%20%20box-sizing%3A%20border-box%3B%0A%20%20position%3A%20absolute%3B%0A%20%20left%3A%2050%25%3B%0A%20%20top%3A%2050%25%3B%0A%20%20transform%3A%20translate%28-50%25%2C%20-50%25%29%3B%0A%20%20width%3A%2070px%3B%0A%20%20height%3A%2070px%3B%0A%20%20border-radius%3A%2050%25%3B%0A%20%20border%3A%204px%20solid%3B%0A%20%20border-color%3A%20%23fff%20transparent%3B%0A%20%20box-shadow%3A%200%200%2012px%20%23fff%2C%200%200%2024px%20%23fff%3B%0A%7D%0A%0A@keyframes%20rotation%20%7B%0A%20%200%25%20%7B%20transform%3A%20rotate%280deg%29%3B%20%7D%0A%20%20100%25%20%7B%20transform%3A%20rotate%28360deg%29%3B%20%7D%0A%7D%0A%0A.loader-text%20%7B%0A%20%20margin-top%3A%2020px%3B%0A%20%20font-size%3A%2022px%3B%0A%20%20font-weight%3A%20bold%3B%0A%7D%0A%0A%20%20%3C/style%3E%0A%3C/head%3E%0A%3Cbody%3E%3Cdiv%20id%3D%22loader-container%22%3E%0A%20%20%3Cspan%20class%3D%22loader%22%3E%3C/span%3E%0A%20%20%3Cdiv%20class%3D%22loader-text%22%20id%3D%22loader-text%22%3E%uD835%uDC73%uD835%uDC76%uD835%uDC68%uD835%uDC6B%uD835%uDC70%uD835%uDC75%uD835%uDC6E...%3C/div%3E%0A%3C/div%3E%3Cdiv%20id%3D%22main-app%22%20style%3D%22display%3Anone%22%3E%0A%20%20%3C%21--%20Seluruh%20kode%20HTML%20website%20utama%20dimulai%20di%20sini%20--%3E%0A%20%20%3C%21--%20Salin%20isi%20dari%20kode%202%20yang%20kamu%20punya%20--%3E%0A%20%20%20%20%3Cstyle%3E%0A%20%20%20%20*%20%7B%20margin%3A%200%3B%20padding%3A%200%3B%20box-sizing%3A%20border-box%3B%20%7D%0A%20%20%20%20body%20%7B%0A%20%20%20%20%20%20font-family%3A%20%27Outfit%27%2C%20sans-serif%3B%0A%20%20%20%20%20%20background%3A%20url%28%27https%3A//img1.pixhost.to/images/5669/597279014_depayyy.jpg%27%29%20no-repeat%20center%20center%20fixed%3B%0A%20%20%20%20%20%20background-size%3A%20cover%3B%0A%20%20%20%20%20%20color%3A%20white%3B%0A%20%20%20%20%20%20text-align%3A%20center%3B%0A%20%20%20%20%20%20overflow-x%3A%20hidden%3B%0A%20%20%20%20%20%20padding%3A%2050px%2020px%3B%0A%20%20%20%20%20%20position%3A%20relative%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20canvas%23particles%2C%20canvas%23snow%20%7B%0A%20%20%20%20%20%20position%3A%20fixed%3B%0A%20%20%20%20%20%20top%3A%200%3B%20left%3A%200%3B%0A%20%20%20%20%20%20width%3A%20100vw%3B%0A%20%20%20%20%20%20height%3A%20100vh%3B%0A%20%20%20%20%20%20z-index%3A%20-1%3B%0A%20%20%20%20%20%20pointer-events%3A%20none%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.shine%20%7B%0A%20%20%20%20%20%20position%3A%20absolute%3B%0A%20%20%20%20%20%20top%3A%20-100%25%3B%0A%20%20%20%20%20%20left%3A%20-100%25%3B%0A%20%20%20%20%20%20width%3A%20300%25%3B%0A%20%20%20%20%20%20height%3A%20300%25%3B%0A%20%20%20%20%20%20background%3A%20linear-gradient%28135deg%2C%20rgba%28255%2C255%2C255%2C0.2%29%2C%20rgba%28255%2C255%2C255%2C0%29%29%3B%0A%20%20%20%20%20%20transform%3A%20rotate%2845deg%29%3B%0A%20%20%20%20%20%20animation%3A%20shine%204s%20infinite%20linear%3B%0A%20%20%20%20%20%20z-index%3A%200%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20@keyframes%20shine%20%7B%0A%20%20%20%20%20%200%25%20%7B%20transform%3A%20translate%28-100%25%2C%20-100%25%29%20rotate%2845deg%29%3B%20%7D%0A%20%20%20%20%20%20100%25%20%7B%20transform%3A%20translate%28100%25%2C%20100%25%29%20rotate%2845deg%29%3B%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20.welcome-message%20%7B%0A%20%20%20%20%20%20position%3A%20fixed%3B%0A%20%20%20%20%20%20top%3A%200%3B%0A%20%20%20%20%20%20left%3A%200%3B%0A%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20height%3A%20100%25%3B%0A%20%20%20%20%20%20background-color%3A%20rgba%280%2C%200%2C%200%2C%200.8%29%3B%0A%20%20%20%20%20%20color%3A%20white%3B%0A%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20flex-direction%3A%20column%3B%0A%20%20%20%20%20%20justify-content%3A%20center%3B%0A%20%20%20%20%20%20align-items%3A%20center%3B%0A%20%20%20%20%20%20opacity%3A%200%3B%0A%20%20%20%20%20%20animation%3A%20fadeIn%202s%20forwards%3B%0A%20%20%20%20%20%20z-index%3A%209999%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20@keyframes%20fadeIn%20%7B%0A%20%20%20%20%20%20to%20%7B%20opacity%3A%201%3B%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20h1%20%7B%0A%20%20%20%20%20%20font-size%3A%203em%3B%0A%20%20%20%20%20%20margin-bottom%3A%200.2em%3B%0A%20%20%20%20%20%20animation%3A%20fadeInDown%201s%20ease-in-out%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20p%20%7B%0A%20%20%20%20%20%20font-size%3A%201.2em%3B%0A%20%20%20%20%20%20color%3A%20white%3B%0A%20%20%20%20%20%20animation%3A%20fadeInUp%201s%20ease-in-out%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.qr%20img%20%7B%0A%20%20%20%20%20%20width%3A%20220px%3B%0A%20%20%20%20%20%20border-radius%3A%2012px%3B%0A%20%20%20%20%20%20margin%3A%2030px%20auto%3B%0A%20%20%20%20%20%20transition%3A%20transform%200.3s%20ease%3B%0A%20%20%20%20%20%20box-shadow%3A%2010px%2010px%205px%200px%20rgba%280%2C0%2C0%2C0.75%29%3B%0A-webkit-box-shadow%3A%2010px%2010px%205px%200px%20rgba%280%2C0%2C0%2C0.75%29%3B%0A-moz-box-shadow%3A%2010px%2010px%205px%200px%20rgba%280%2C0%2C0%2C0.75%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.qr%3Ahover%20img%20%7B%20transform%3A%20scale%281.08%29%3B%20%7D%0A%0A%20%20%20%20.collapsible-container%20%7B%0A%20%20%20%20%20%20max-width%3A%20500px%3B%0A%20%20%20%20%20%20margin%3A%2030px%20auto%3B%0A%20%20%20%20%20%20background-color%3A%20rgba%2830%2C%2041%2C%2059%2C%200.8%29%3B%0A%20%20%20%20%20%20border-radius%3A%2015px%3B%0A%20%20%20%20%20%20padding%3A%2020px%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.collapsible%20%7B%0A%20%20%20%20%20%20background%3A%20linear-gradient%2845deg%2C%20white%2C%20black%2C%20white%29%3B%0A%20%20%20%20%20%20background-size%3A%20200%25%20200%25%3B%0A%20%20%20%20%20%20animation%3A%20gradientBtn%203s%20ease%20infinite%3B%0A%20%20%20%20%20%20color%3A%20white%3B%0A%20%20%20%20%20%20cursor%3A%20pointer%3B%0A%20%20%20%20%20%20padding%3A%2014px%3B%0A%20%20%20%20%20%20width%3A%20100%25%3B%0A%20%20%20%20%20%20border%3A%20none%3B%0A%20%20%20%20%20%20font-size%3A%201.1em%3B%0A%20%20%20%20%20%20border-radius%3A%2010px%3B%0A%20%20%20%20%20%20margin-top%3A%2010px%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.content%20%7B%0A%20%20%20%20%20%20padding%3A%200%2018px%3B%0A%20%20%20%20%20%20max-height%3A%200%3B%0A%20%20%20%20%20%20overflow%3A%20hidden%3B%0A%20%20%20%20%20%20transition%3A%20max-height%200.3s%20ease-out%3B%0A%20%20%20%20%20%20color%3A%20white%3B%0A%20%20%20%20%20%20border-radius%3A%2010px%3B%0A%20%20%20%20%20%20margin-top%3A%205px%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.btn-group%20%7B%0A%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20justify-content%3A%20center%3B%0A%20%20%20%20%20%20flex-wrap%3A%20wrap%3B%0A%20%20%20%20%20%20margin-top%3A%2040px%3B%0A%20%20%20%20%20%20gap%3A%2012px%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.btn-link%20%7B%0A%20%20%20%20%20%20padding%3A%2014px%2024px%3B%0A%20%20%20%20%20%20background%3A%20linear-gradient%2845deg%2C%20white%2C%20black%2C%20white%29%3B%0A%20%20%20%20%20%20background-size%3A%20200%25%20200%25%3B%0A%20%20%20%20%20%20animation%3A%20gradientBtn%204s%20ease%20infinite%3B%0A%20%20%20%20%20%20color%3A%20%23fff%3B%0A%20%20%20%20%20%20font-weight%3A%20600%3B%0A%20%20%20%20%20%20border-radius%3A%2012px%3B%0A%20%20%20%20%20%20text-decoration%3A%20none%3B%0A%20%20%20%20%20%20transition%3A%200.3s%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.btn-link%3Ahover%20%7B%20transform%3A%20scale%281.08%29%3B%20%7D%0A%0A%20%20%20%20@keyframes%20fadeInDown%20%7B%0A%20%20%20%20%20%200%25%20%7B%20opacity%3A%200%3B%20transform%3A%20translateY%28-30px%29%3B%20%7D%0A%20%20%20%20%20%20100%25%20%7B%20opacity%3A%201%3B%20transform%3A%20translateY%280%29%3B%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20@keyframes%20fadeInUp%20%7B%0A%20%20%20%20%20%200%25%20%7B%20opacity%3A%200%3B%20transform%3A%20translateY%2830px%29%3B%20%7D%0A%20%20%20%20%20%20100%25%20%7B%20opacity%3A%201%3B%20transform%3A%20translateY%280%29%3B%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20@keyframes%20gradientBtn%20%7B%0A%20%20%20%20%20%200%25%20%7B%20background-position%3A%200%25%2050%25%3B%20%7D%0A%20%20%20%20%20%2050%25%20%7B%20background-position%3A%20100%25%2050%25%3B%20%7D%0A%20%20%20%20%20%20100%25%20%7B%20background-position%3A%200%25%2050%25%3B%20%7D%0A%20%20%20%20%7D%0A%20%20%3C/style%3E%0A%3C/head%3E%0A%3Cbody%3E%0A%0A%3Cdiv%20class%3D%22shine%22%3E%3C/div%3E%0A%0A%3C%21--%20Welcome%20Animation%20--%3E%0A%3Cdiv%20id%3D%22welcome-message%22%20class%3D%22welcome-message%22%3E%0A%20%20%3Ch1%3E%uD835%uDE91%uD835%uDE8E%uD835%uDEA2%uD835%uDEA2%2C%20%uD835%uDE92%27%uD835%uDE92%uD835%uDE96%20%uD835%uDE96%uD835%uDE92%uD835%uDE97%uD835%uDE8E%uD835%uDE8E%3C/h1%3E%0A%20%20%3Cp%3E%uD835%uDE9C%uD835%uDE8E%uD835%uDE95%uD835%uDE8A%uD835%uDE96%uD835%uDE8A%uD835%uDE9D%20%uD835%uDE73%uD835%uDE8A%uD835%uDE9D%uD835%uDE8A%uD835%uDE97%uD835%uDE90%20%uD835%uDE73%uD835%uDE92%20%uD835%uDE86%uD835%uDE8E%uD835%uDE8B%uD835%uDE9C%uD835%uDE92%uD835%uDE9D%uD835%uDE8E%20%uD835%uDE82%uD835%uDE92%uD835%uDE96%uD835%uDE99%uD835%uDE95%uD835%uDE8E%20%uD835%uDE7F%uD835%uDE8A%uD835%uDEA2%uD835%uDE96%uD835%uDE8E%uD835%uDE97%uD835%uDE9D%20%uD835%uDE7A%uD835%uDE9E%3C/p%3E%0A%20%3Cp%3E%uD835%uDE8A%uD835%uDE94%uD835%uDE9E%20%uD835%uDE91%uD835%uDE8A%uD835%uDE9B%uD835%uDE8A%uD835%uDE99%20%uD835%uDE94%uD835%uDE8A%uD835%uDE96%uD835%uDE9E%20%uD835%uDE9D%uD835%uDE92%uD835%uDE8D%uD835%uDE8A%uD835%uDE94%20%uD835%uDE9C%uD835%uDE8A%uD835%uDE95%uD835%uDE8A%uD835%uDE91%20%uD835%uDE9D%uD835%uDE8F%20%uD835%uDE98%uD835%uDE94%uD835%uDE8E%uD835%uDEA2%3C/p%3E%0A%20%20%3Cbutton%20id%3D%22go-to-payment%22%20class%3D%22btn-link%22%3Ego%20to%20payment%3C/button%3E%0A%3C/div%3E%0A%0A%3Caudio%20id%3D%22clickSound%22%20src%3D%22https%3A//files.catbox.moe/0i11yd.mp3%22%3E%3C/audio%3E%0A%0A%3C%21--%20Konten%20Utama%20--%3E%0A%3Cdiv%20id%3D%22main-content%22%20style%3D%22display%3A%20none%3B%22%3E%0A%20%20%3Ch1%3EPayment%20Methods%3C/h1%3E%0A%20%20%3Cp%3E%uD835%uDE4E%uD835%uDE5E%uD835%uDE61%uD835%uDE56%uD835%uDE60%uD835%uDE56%uD835%uDE63%20%uD835%uDE4B%uD835%uDE5E%uD835%uDE61%uD835%uDE5E%uD835%uDE5D%20%uD835%uDE4E%uD835%uDE56%uD835%uDE61%uD835%uDE56%uD835%uDE5D%20%uD835%uDE4E%uD835%uDE56%uD835%uDE69%uD835%uDE6A%20%uD835%uDE48%uD835%uDE5A%uD835%uDE69%uD835%uDE64%uD835%uDE59%uD835%uDE5A%20%uD835%uDE4B%uD835%uDE5A%uD835%uDE62%uD835%uDE57%uD835%uDE56%uD835%uDE6E%uD835%uDE56%uD835%uDE67%uD835%uDE56%uD835%uDE63%20%uD835%uDE3F%uD835%uDE5E%20%uD835%uDE3D%uD835%uDE56%uD835%uDE6C%uD835%uDE56%uD835%uDE5D%20%uD835%uDE44%uD835%uDE63%uD835%uDE5E%3C/p%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22qr%22%20onclick%3D%22zoomQR%28%29%22%3E%0A%20%20%20%20%3Cimg%20src%3D%22https%3A//img1.pixhost.to/images/5670/597301272_kyami.jpg%22%20/%3E%0A%20%20%3C/div%3E%0A%0A%20%20%20%20%20%20%20%20%3Cp%20class%3D%22subtitle%22%3E%uD835%uDE4E%uD835%uDE58%uD835%uDE56%uD835%uDE63%20%uD835%uDE60%uD835%uDE64%uD835%uDE59%uD835%uDE5A%20%uD835%uDE4C%uD835%uDE4D%20%uD835%uDE59%uD835%uDE5E%20%uD835%uDE56%uD835%uDE69%uD835%uDE56%uD835%uDE68%20%uD835%uDE59%uD835%uDE5A%uD835%uDE63%uD835%uDE5C%uD835%uDE56%uD835%uDE63%20%uD835%uDE56%uD835%uDE65%uD835%uDE61%uD835%uDE5E%uD835%uDE60%uD835%uDE56%uD835%uDE68%uD835%uDE5E%20%uD835%uDE65%uD835%uDE5A%uD835%uDE62%uD835%uDE57%uD835%uDE56%uD835%uDE6E%uD835%uDE56%uD835%uDE67%uD835%uDE56%uD835%uDE63%20%uD835%uDE3C%uD835%uDE63%uD835%uDE59%uD835%uDE56%3C/p%3E%0A%0A%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22collapsible-container%22%3E%0A%20%20%20%20%3Cbutton%20class%3D%22collapsible%22%3E%u25B6%20%uD835%uDC6C-%uD835%uDC7E%uD835%uDC68%uD835%uDC73%uD835%uDC73%uD835%uDC6C%uD835%uDC7B%3C/button%3E%0A%20%20%20%20%3Cdiv%20class%3D%22content%22%3E%0A%20%20%20%20%20%20%3Cp%3EDANA%3A%20%20081939245564%3C/p%3E%0A%20%20%20%20%20%20%3Cp%3EOVO%3A%20085900017703%3C/p%3E%0A%20%20%20%20%20%20%3Cp%3EGOPAY%3A%20085900017703%3C/p%3E%0A%20%20%20%20%3C/div%3E%0A%0A%20%20%20%20%3Cbutton%20class%3D%22collapsible%22%3E%u25B6%20%uD835%uDC7B%uD835%uDC79%uD835%uDC68%uD835%uDC75%uD835%uDC7A%uD835%uDC6D%uD835%uDC6C%uD835%uDC79%20%uD835%uDC69%uD835%uDC68%uD835%uDC75%uD835%uDC72%3C/button%3E%0A%20%20%20%20%3Cdiv%20class%3D%22content%22%3E%0A%20%20%20%20%20%20%3Cp%3EBCA%3A%20tidak%20tersedia%3C/p%3E%0A%20%20%20%20%20%20%3Cp%3ESEA%20BANK%3A%20901131996822%3C/p%3E%0A%20%20%20%20%3C/div%3E%0A%20%20%3C/div%3E%0A%0A%3Cdiv%20class%3D%22btn-group%22%3E%0A%20%20%3Ca%20href%3D%22https%3A//wa.me/6281939245564%22%20class%3D%22btn-link%22%20target%3D%22_blank%22%3EWhatsApp%3C/a%3E%0A%20%20%3Ca%20href%3D%22https%3A//t.me/lightsecret%22%20class%3D%22btn-link%22%20target%3D%22_blank%22%3ETelegram%3C/a%3E%0A%20%20%20%3Ca%20href%3D%22https%3A//www.youtube.com/@lightsecret%22%20class%3D%22btn-link%22%20target%3D%22_blank%22%3EYouTube%3C/a%3E%0A%20%20%3Ca%20href%3D%22https%3A//whatsapp.com/channel/0029VbADDW2ISTkREJ5m4833%22%20class%3D%22btn-link%22%20target%3D%22_blank%22%3EChannel%20WhatsApp%3C/a%3E%0A%20%20%3Ca%20href%3D%22https%3A//tiktok.com/@lightsecrethosting%22%20class%3D%22btn-link%22%3ETiktok%3C/a%3E%0A%20%20%3Ca%20href%3D%22https%3A//whatsapp.com/channel/0029Vb9vfiZ96H4VScP6l10j%22%20class%3D%22btn-link%22%20target%3D%22_blank%22%3EChannel%20Testimoni%3C/a%3E%0A%3C/div%3E%0A%0A%3C/div%3E%0A%20%3Cdiv%20class%3D%22overlay%22%20id%3D%22qrOverlay%22%20onclick%3D%22closeZoom%28%29%22%3E%0A%20%20%20%20%20%20%20%0A%0A%3Ccanvas%20id%3D%22particles%22%3E%3C/canvas%3E%0A%3Ccanvas%20id%3D%22snow%22%3E%3C/canvas%3E%0A%0A%3Cscript%3E%0A%20%20//%20Welcome%20transition%0A%20%20document.getElementById%28%27go-to-payment%27%29.addEventListener%28%27click%27%2C%20function%20%28%29%20%7B%0A%20%20%20%20document.getElementById%28%27welcome-message%27%29.style.display%20%3D%20%27none%27%3B%0A%20%20%20%20document.getElementById%28%27main-content%27%29.style.display%20%3D%20%27block%27%3B%0A%20%20%7D%29%3B%0A%0A%20%20document.querySelectorAll%28%22.collapsible%22%29.forEach%28btn%20%3D%3E%20%7B%0A%20%20%20%20btn.addEventListener%28%22click%22%2C%20function%20%28%29%20%7B%0A%20%20%20%20%20%20this.classList.toggle%28%22active%22%29%3B%0A%20%20%20%20%20%20const%20content%20%3D%20this.nextElementSibling%3B%0A%20%20%20%20%20%20content.style.maxHeight%20%3D%20content.style.maxHeight%20%3F%20null%20%3A%20content.scrollHeight%20+%20%22px%22%3B%0A%20%20%20%20%7D%29%3B%0A%20%20%7D%29%3B%0A%0A%20%20//%20Partikel%20warna-warni%0A%20%20const%20canvas%20%3D%20document.getElementById%28%22particles%22%29%3B%0A%20%20const%20ctx%20%3D%20canvas.getContext%28%222d%22%29%3B%0A%20%20canvas.width%20%3D%20window.innerWidth%3B%0A%20%20canvas.height%20%3D%20window.innerHeight%3B%0A%20%20const%20particles%20%3D%20%5B%5D%3B%0A%20%20for%20%28let%20i%20%3D%200%3B%20i%20%3C%2080%3B%20i++%29%20%7B%0A%20%20%20%20particles.push%28%7B%0A%20%20%20%20%20%20x%3A%20Math.random%28%29%20*%20canvas.width%2C%0A%20%20%20%20%20%20y%3A%20Math.random%28%29%20*%20canvas.height%2C%0A%20%20%20%20%20%20size%3A%20Math.random%28%29%20*%202%20+%201%2C%0A%20%20%20%20%20%20color%3A%20%60hsl%28%24%7BMath.random%28%29%20*%20360%7D%2C%20100%25%2C%2060%25%29%60%2C%0A%20%20%20%20%20%20speedX%3A%20Math.random%28%29%20*%200.5%20-%200.25%2C%0A%20%20%20%20%20%20speedY%3A%20Math.random%28%29%20*%200.5%20-%200.25%2C%0A%20%20%20%20%7D%29%3B%0A%20%20%7D%0A%20%20function%20drawParticles%28%29%20%7B%0A%20%20%20%20ctx.clearRect%280%2C%200%2C%20canvas.width%2C%20canvas.height%29%3B%0A%20%20%20%20particles.forEach%28p%20%3D%3E%20%7B%0A%20%20%20%20%20%20ctx.fillStyle%20%3D%20p.color%3B%0A%20%20%20%20%20%20ctx.beginPath%28%29%3B%0A%20%20%20%20%20%20ctx.arc%28p.x%2C%20p.y%2C%20p.size%2C%200%2C%20Math.PI%20*%202%29%3B%0A%20%20%20%20%20%20ctx.fill%28%29%3B%0A%20%20%20%20%20%20p.x%20+%3D%20p.speedX%3B%0A%20%20%20%20%20%20p.y%20+%3D%20p.speedY%3B%0A%20%20%20%20%20%20if%20%28p.x%20%3C%200%20%7C%7C%20p.x%20%3E%20canvas.width%29%20p.speedX%20*%3D%20-1%3B%0A%20%20%20%20%20%20if%20%28p.y%20%3C%200%20%7C%7C%20p.y%20%3E%20canvas.height%29%20p.speedY%20*%3D%20-1%3B%0A%20%20%20%20%7D%29%3B%0A%20%20%20%20requestAnimationFrame%28drawParticles%29%3B%0A%20%20%7D%0A%20%20drawParticles%28%29%3B%0A%0A%20%20//%20Efek%20salju%0A%20%20const%20snowCanvas%20%3D%20document.getElementById%28%22snow%22%29%3B%0A%20%20const%20snowCtx%20%3D%20snowCanvas.getContext%28%222d%22%29%3B%0A%20%20snowCanvas.width%20%3D%20window.innerWidth%3B%0A%20%20snowCanvas.height%20%3D%20window.innerHeight%3B%0A%20%20const%20snowflakes%20%3D%20%5B%5D%3B%0A%20%20for%20%28let%20i%20%3D%200%3B%20i%20%3C%20100%3B%20i++%29%20%7B%0A%20%20%20%20snowflakes.push%28%7B%0A%20%20%20%20%20%20x%3A%20Math.random%28%29%20*%20snowCanvas.width%2C%0A%20%20%20%20%20%20y%3A%20Math.random%28%29%20*%20snowCanvas.height%2C%0A%20%20%20%20%20%20radius%3A%20Math.random%28%29%20*%203%20+%203%2C%0A%20%20%20%20%20%20speedY%3A%20Math.random%28%29%20*%201%20+%202%2C%0A%20%20%20%20%20%20speedX%3A%20Math.random%28%29%20*%200.5%20-%200.50%0A%20%20%20%20%7D%29%3B%0A%20%20%7D%0A%20%20%20%20%20%20%20%20window.addEventListener%28%27load%27%2C%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20loader%20%3D%20document.getElementById%28%27loader%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20about%20%3D%20document.getElementById%28%27about%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20setTimeout%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20loader.classList.add%28%27hidden%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20setTimeout%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20about.classList.add%28%27active%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%20200%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%202500%29%3B%0A%20%20%20%20%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20%20%20%20%20function%20showPayment%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20about%20%3D%20document.getElementById%28%27about%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20payment%20%3D%20document.getElementById%28%27payment%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20about.classList.remove%28%27active%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20about.classList.add%28%27hidden%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20setTimeout%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20payment.classList.remove%28%27hidden%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20payment.classList.add%28%27active%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%20900%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20function%20showAbout%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20payment%20%3D%20document.getElementById%28%27payment%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20const%20about%20%3D%20document.getElementById%28%27about%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20payment.classList.remove%28%27active%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20payment.classList.add%28%27hidden%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20setTimeout%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20about.classList.remove%28%27hidden%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20about.classList.add%28%27active%27%29%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%20900%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20function%20drawSnow%28%29%20%7B%0A%20%20%20%20snowCtx.clearRect%280%2C%200%2C%20snowCanvas.width%2C%20snowCanvas.height%29%3B%0A%20%20%20%20snowCtx.fillStyle%20%3D%20%22rgba%28255%2C%20255%2C%20255%2C%200.8%29%22%3B%0A%20%20%20%20snowflakes.forEach%28flake%20%3D%3E%20%7B%0A%20%20%20%20%20%20snowCtx.beginPath%28%29%3B%0A%20%20%20%20%20%20snowCtx.arc%28flake.x%2C%20flake.y%2C%20flake.radius%2C%200%2C%20Math.PI%20*%202%29%3B%0A%20%20%20%20%20%20snowCtx.fill%28%29%3B%0A%20%20%20%20%20%20flake.y%20+%3D%20flake.speedY%3B%0A%20%20%20%20%20%20flake.x%20+%3D%20flake.speedX%3B%0A%20%20%20%20%20%20if%20%28flake.y%20%3E%20snowCanvas.height%29%20%7B%0A%20%20%20%20%20%20%20%20flake.y%20%3D%20-flake.radius%3B%0A%20%20%20%20%20%20%20%20flake.x%20%3D%20Math.random%28%29%20*%20snowCanvas.width%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%29%3B%0A%20%20%20%20requestAnimationFrame%28drawSnow%29%3B%0A%20%20%7D%0A%20%20drawSnow%28%29%3B%0A%20%20document.getElementById%28%22go-to-payment%22%29.addEventListener%28%22click%22%2C%20function%20%28%29%20%7B%0A%20%20%20%20const%20sound%20%3D%20document.getElementById%28%22clickSound%22%29%3B%0A%20%20%20%20sound.currentTime%20%3D%200%3B%20//%20Mulai%20dari%20awal%0A%20%20%20%20sound.play%28%29%3B%0A%20%20%7D%29%3B%0A%3C/script%3E%0A%0A%3C/div%3E%3Cscript%3E%0A%20%20//%20Animasi%20loading%3A%20Loading%20-%3E%20Ready%20-%3E%20Munculkan%20konten%20utama%0A%20%20const%20loaderText%20%3D%20document.getElementById%28%27loader-text%27%29%3B%0A%0A%20%20setTimeout%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20loaderText.textContent%20%3D%20%27%uD835%uDC79%uD835%uDC6C%uD835%uDC68%uD835%uDC6B%uD835%uDC80%20%21%27%3B%0A%20%20%7D%2C%202000%29%3B%0A%0A%20%20setTimeout%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20document.getElementById%28%27loader-container%27%29.style.display%20%3D%20%27none%27%3B%0A%20%20%20%20document.getElementById%28%27main-app%27%29.style.display%20%3D%20%27block%27%3B%0A%20%20%7D%2C%203000%29%3B%0A%3C/script%3E%3C/body%3E%0A%3C/html%3E'));
+  // Welcome transition
+  document.getElementById('go-to-payment').addEventListener('click', function () {
+    document.getElementById('welcome-message').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+  });
+
+  document.querySelectorAll(".collapsible").forEach(btn => {
+    btn.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const content = this.nextElementSibling;
+      content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+    });
+  });
+
+  // Partikel warna-warni
+  const canvas = document.getElementById("particles");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const particles = [];
+  for (let i = 0; i < 80; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 2 + 1,
+      color: `hsl(${Math.random() * 360}, 100%, 60%)`,
+      speedX: Math.random() * 0.5 - 0.25,
+      speedY: Math.random() * 0.5 - 0.25,
+    });
+  }
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+      p.x += p.speedX;
+      p.y += p.speedY;
+      if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+    });
+    requestAnimationFrame(drawParticles);
+  }
+  drawParticles();
+
+  // Efek salju
+  const snowCanvas = document.getElementById("snow");
+  const snowCtx = snowCanvas.getContext("2d");
+  snowCanvas.width = window.innerWidth;
+  snowCanvas.height = window.innerHeight;
+  const snowflakes = [];
+  for (let i = 0; i < 100; i++) {
+    snowflakes.push({
+      x: Math.random() * snowCanvas.width,
+      y: Math.random() * snowCanvas.height,
+      radius: Math.random() * 3 + 3,
+      speedY: Math.random() * 1 + 2,
+      speedX: Math.random() * 0.5 - 0.50
+    });
+  }
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            const about = document.getElementById('about');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                setTimeout(() => {
+                    about.classList.add('active');
+                }, 200);
+            }, 2500);
+        });
+
+        function showPayment() {
+            const about = document.getElementById('about');
+            const payment = document.getElementById('payment');
+            about.classList.remove('active');
+            about.classList.add('hidden');
+            setTimeout(() => {
+                payment.classList.remove('hidden');
+                payment.classList.add('active');
+            }, 900);
+        }
+
+        function showAbout() {
+            const payment = document.getElementById('payment');
+            const about = document.getElementById('about');
+            payment.classList.remove('active');
+            payment.classList.add('hidden');
+            setTimeout(() => {
+                about.classList.remove('hidden');
+                about.classList.add('active');
+            }, 900);
+        }
+  function drawSnow() {
+    snowCtx.clearRect(0, 0, snowCanvas.width, snowCanvas.height);
+    snowCtx.fillStyle = "rgba(255, 255, 255, 0.8)";
+    snowflakes.forEach(flake => {
+      snowCtx.beginPath();
+      snowCtx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
+      snowCtx.fill();
+      flake.y += flake.speedY;
+      flake.x += flake.speedX;
+      if (flake.y > snowCanvas.height) {
+        flake.y = -flake.radius;
+        flake.x = Math.random() * snowCanvas.width;
+      }
+    });
+    requestAnimationFrame(drawSnow);
+  }
+  drawSnow();
+  document.getElementById("go-to-payment").addEventListener("click", function () {
+    const sound = document.getElementById("clickSound");
+    sound.currentTime = 0; // Mulai dari awal
+    sound.play();
+  });
 </script>
+
+</div><script>
+  // Animasi loading: Loading -> Ready -> Munculkan konten utama
+  const loaderText = document.getElementById('loader-text');
+
+  setTimeout(() => {
+    loaderText.textContent = '𝑹𝑬𝑨𝑫𝒀 !';
+  }, 2000);
+
+  setTimeout(() => {
+    document.getElementById('loader-container').style.display = 'none';
+    document.getElementById('main-app').style.display = 'block';
+  }, 3000);
+</script></body>
+</html>

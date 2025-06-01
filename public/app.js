@@ -1,1 +1,86 @@
-function _0x4d3e(_0x5c7c2c,_0x1a342c){const _0x29729e=_0x2972();return _0x4d3e=function(_0x4d3e46,_0xb1a123){_0x4d3e46=_0x4d3e46-0x6a;let _0x3e155e=_0x29729e[_0x4d3e46];return _0x3e155e;},_0x4d3e(_0x5c7c2c,_0x1a342c);}const _0x31a90a=_0x4d3e;(function(_0x11405e,_0x2a4612){const _0x36b603=_0x4d3e,_0x327cbf=_0x11405e();while(!![]){try{const _0x220f22=-parseInt(_0x36b603(0x7e))/0x1+parseInt(_0x36b603(0x83))/0x2*(-parseInt(_0x36b603(0x88))/0x3)+-parseInt(_0x36b603(0x8d))/0x4+-parseInt(_0x36b603(0x6c))/0x5*(parseInt(_0x36b603(0x78))/0x6)+-parseInt(_0x36b603(0x96))/0x7+parseInt(_0x36b603(0x92))/0x8+parseInt(_0x36b603(0x7c))/0x9*(parseInt(_0x36b603(0x72))/0xa);if(_0x220f22===_0x2a4612)break;else _0x327cbf['push'](_0x327cbf['shift']());}catch(_0x589434){_0x327cbf['push'](_0x327cbf['shift']());}}}(_0x2972,0x7ccac),document[_0x31a90a(0x86)]('a[href=\x22#page2\x22]')['addEventListener'](_0x31a90a(0x75),function(_0x4a4ecd){const _0x48a3ac=_0x31a90a;_0x4a4ecd[_0x48a3ac(0x90)](),document[_0x48a3ac(0x86)](_0x48a3ac(0x94))[_0x48a3ac(0x85)]({'behavior':_0x48a3ac(0x8c)});}));function animateNumbers(){const _0x1250bd=_0x31a90a;document['querySelectorAll'](_0x1250bd(0x6d))[_0x1250bd(0x7d)](_0x22189e=>{const _0x257e8c=_0x1250bd,_0x2d0248=+_0x22189e[_0x257e8c(0x6b)](_0x257e8c(0x71)),_0x2cad70=0x3e8,_0x106851=0x3c,_0x44453d=Math[_0x257e8c(0x91)](_0x2cad70/(0x3e8/_0x106851));let _0x1015b5=0x0;const _0xf7d09b=setInterval(()=>{const _0x1939dd=_0x257e8c;_0x1015b5++;const _0x320685=_0x1015b5/_0x44453d,_0x36d176=Math[_0x1939dd(0x91)](_0x2d0248*_0x320685);_0x22189e[_0x1939dd(0x6e)]=_0x36d176+'+',_0x1015b5===_0x44453d&&clearInterval(_0xf7d09b);},0x3e8/_0x106851);});}animateNumbers(),setInterval(()=>{const _0x4705b0=_0x31a90a;document[_0x4705b0(0x93)](_0x4705b0(0x6d))[_0x4705b0(0x7d)](_0x2cda65=>_0x2cda65[_0x4705b0(0x6e)]='0+'),animateNumbers();},0xfa0);const input=document[_0x31a90a(0x86)](_0x31a90a(0x76));input['addEventListener'](_0x31a90a(0x77),()=>{const _0x50d45a=_0x31a90a;input[_0x50d45a(0x73)]['trim']()!==''?input[_0x50d45a(0x84)][_0x50d45a(0x7b)](_0x50d45a(0x87)):input[_0x50d45a(0x84)][_0x50d45a(0x82)](_0x50d45a(0x87));});const menu=document[_0x31a90a(0x86)](_0x31a90a(0x95)),close=document[_0x31a90a(0x86)]('.close'),linkNav=document[_0x31a90a(0x86)](_0x31a90a(0x74)),contentNav=document[_0x31a90a(0x86)]('.content-navbar');function _0x2972(){const _0x40b8c2=['round','7212080wvTzcP','querySelectorAll','#page2','.menu','1676192QHbWFZ','innerHTML','block','getAttribute','45eOhzhS','.angka-informasi','textContent','Tidak\x20ada\x20data','active','data-target','10150lAPHSC','value','.link-nav','click','.search-input','input','625122FblcxN','.loading','style','add','31167pTARcb','forEach','879863GjSvjU','none','.title-card','toLowerCase','remove','1668254ruUJxe','classList','scrollIntoView','querySelector','has-content','3scwehK','includes','addEventListener','display','smooth','4056712DaGdTf','.card','.no-data','preventDefault'];_0x2972=function(){return _0x40b8c2;};return _0x2972();}menu[_0x31a90a(0x8a)](_0x31a90a(0x75),()=>{const _0x1bd1dc=_0x31a90a;menu[_0x1bd1dc(0x84)][_0x1bd1dc(0x7b)]('active'),close[_0x1bd1dc(0x84)][_0x1bd1dc(0x7b)]('active'),linkNav['classList'][_0x1bd1dc(0x7b)](_0x1bd1dc(0x70)),contentNav[_0x1bd1dc(0x84)][_0x1bd1dc(0x7b)]('active');}),close['addEventListener'](_0x31a90a(0x75),()=>{const _0x36305c=_0x31a90a;menu['classList'][_0x36305c(0x82)]('active'),close[_0x36305c(0x84)]['remove']('active'),linkNav['classList'][_0x36305c(0x82)](_0x36305c(0x70)),contentNav[_0x36305c(0x84)][_0x36305c(0x82)](_0x36305c(0x70));});const searchInput=document['querySelector'](_0x31a90a(0x76)),cards=document[_0x31a90a(0x93)](_0x31a90a(0x8e)),noDataText=document[_0x31a90a(0x86)](_0x31a90a(0x8f));searchInput['addEventListener'](_0x31a90a(0x77),function(){const _0x335401=_0x31a90a,_0x2b2f98=this['value'][_0x335401(0x81)]();let _0x2eec5e=![];cards[_0x335401(0x7d)](_0x1de6e2=>{const _0x976759=_0x335401,_0x54b81d=_0x1de6e2[_0x976759(0x86)](_0x976759(0x80))['textContent'][_0x976759(0x81)]();_0x54b81d[_0x976759(0x89)](_0x2b2f98)?(_0x1de6e2[_0x976759(0x7a)][_0x976759(0x8b)]=_0x976759(0x6a),_0x2eec5e=!![]):_0x1de6e2[_0x976759(0x7a)][_0x976759(0x8b)]=_0x976759(0x7f);}),noDataText[_0x335401(0x7a)][_0x335401(0x8b)]=_0x2eec5e?_0x335401(0x7f):'block',noDataText[_0x335401(0x97)]=_0x2eec5e?'':_0x335401(0x6f);});const loading=document[_0x31a90a(0x86)](_0x31a90a(0x79));setTimeout(()=>{const _0x4d7425=_0x31a90a;loading['style'][_0x4d7425(0x8b)]=_0x4d7425(0x7f);},0x7d0);
+document.querySelector('a[href="#page2"]').addEventListener('click', function (e) {
+  e.preventDefault();
+  document.querySelector('#page2').scrollIntoView({ behavior: 'smooth' });
+});
+
+function animateNumbers() {
+  document.querySelectorAll('.angka-informasi').forEach(el => {
+    const target = +el.getAttribute('data-target');
+    const duration = 1000;
+    const frameRate = 60;
+    const totalFrames = Math.round(duration / (1000 / frameRate));
+    let frame = 0;
+
+    const counter = setInterval(() => {
+      frame++;
+      const progress = frame / totalFrames;
+      const value = Math.round(target * progress);
+      el.textContent = value + '+';
+
+      if (frame === totalFrames) {
+        clearInterval(counter);
+      }
+    }, 1000 / frameRate);
+  });
+}
+
+animateNumbers();
+
+setInterval(() => {
+  document.querySelectorAll('.angka-informasi').forEach(el => el.textContent = '0+');
+  animateNumbers();
+}, 4000);
+const input = document.querySelector('.search-input');
+
+input.addEventListener('input', () => {
+  if(input.value.trim() !== '') {
+    input.classList.add('has-content');
+  } else {
+    input.classList.remove('has-content');
+  }
+});
+const menu = document.querySelector('.menu');
+const close = document.querySelector('.close');
+const linkNav = document.querySelector('.link-nav');
+const contentNav = document.querySelector('.content-navbar');
+
+menu.addEventListener('click', () => {
+  menu.classList.add('active');
+  close.classList.add('active');
+  linkNav.classList.add('active');
+  contentNav.classList.add('active');
+});
+
+close.addEventListener('click', () => {
+  menu.classList.remove('active');
+  close.classList.remove('active');
+  linkNav.classList.remove('active');
+  contentNav.classList.remove('active');
+});
+const searchInput = document.querySelector('.search-input');
+const cards = document.querySelectorAll('.card');
+const noDataText = document.querySelector('.no-data');
+
+searchInput.addEventListener('input', function () {
+  const keyword = this.value.toLowerCase();
+  
+  let found = false;
+  cards.forEach(card => {
+    const title = card.querySelector('.title-card').textContent.toLowerCase();
+
+    if (title.includes(keyword)) {
+      card.style.display = 'block';
+      found = true;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  noDataText.style.display = found ? 'none' : 'block';
+  noDataText.innerHTML=found ? '' : 'Tidak ada data';
+});
+
+const loading=document.querySelector('.loading');
+setTimeout(() => {
+  loading.style.display='none'
+}, 2000);

@@ -452,6 +452,21 @@ margin-top: 10px;
 }
 
 
+.img-logo1 {
+
+    display: block;
+
+    margin: 0 auto;
+    position: relative;
+    top: 80px;
+    width: 400px;
+    border-radius: 70px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+
 .desc1-card{
     font-size: .8rem;
     list-style: none;
